@@ -200,6 +200,8 @@ purchase is complete.
 > -   a status (i.e. 'in progress', 'completed')
 > -   a date of when the order was completed
 
+```javascript
+
 var product = {
   name: 'Vitamix Ascent A2500 Blender, Black',
   description: 'The best blender in the world.  Part blender, part food processor.  Can make soup, smoothies, sauces!  It is the item that will last forever- you can pass it on to your children.  So, spend the money now, and let them save later!',
@@ -216,6 +218,7 @@ var order: {
   status: 'in progress',
   dateCompleted: 'incomplete'
 };
+```
 
 ## Representing Abstractions in Code
 

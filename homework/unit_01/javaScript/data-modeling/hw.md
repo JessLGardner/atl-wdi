@@ -60,13 +60,86 @@ track of whether tasks have been completed, it will also keep track of
 how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
-> Answer here
+
+> >
+Both tasks and projects are named in the app description. Each has intuitive associated information/data to be easily contained in its respective object.
+
+Task
+- name
+- start date
+- complete date
+
+Project
+- name
+- description
+- group of tasks
+- start date
+- completion date
+
+```js
+var task = {
+  name: 'clean out closet',
+  startDate: '07/05/2017',
+  endDate: '0'
+};
+
+var project = {
+  name: 'clean house',
+  description: 'group of to-do lists',
+  setOfTasks: [clean out closet, empty attic, fix shelves, clean grout],
+  startDate: '07/05/2017',
+  endDate: '0'
+};
+```
+
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
-> Answer here
+
+> >
+Photos and albums are a obvious abstractions in a photo app. Created a user object to contain all the associated data for the 'sharing' functionalities of the app.
+
+Photo
+- name
+- date taken
+- location
+- image host
+
+Album
+- name
+- privacy setting
+- photo set
+
+User
+- username
+- all photos
+- shared albums
+- all albums
+
+```js
+var photo = {
+  name: 'On the dock',
+  date: '08/17/09',
+  location: 'St. Paul MN',
+  url: 'images/pic1.jpg'
+};
+
+var album = {
+  name: 'Lakehouse 2009',
+  privacy: 'friends only',
+  photoSet: ['images/pic1.jpg', 'images/pic2.jpg', 'images/pic3.jpg']
+};
+
+var user = {
+  username: 'katherine_hepburn',
+  totalPhotos: ['images/pic1.jpg', 'images/pic2.jpg', 'images/pic3.jpg', 'images/pic4.jpg', 'images/pic5.jpg', 'images/pic6.jpg'],
+  sharedAlbums: ['Lakehouse 2009', 'Holidays 2009', 'Australia'],
+  totalAlbums: ['Before and After', 'Lakehouse 2009', 'Holidays 2009', 'Australia', 'Rescue Owls']
+};
+```
+
 
 ### 3. Home Automation Manager
 
@@ -75,7 +148,43 @@ track of the time and temperature of the house that it monitors, and use that
 information to turn on and off different lights and adjust the thermostat up
 and down.
 
-> Answer here
+
+> >
+This app will keep track of both lighting and temperature, so separate objects to contain the information on the controls for each. Also a separte entity for the house as a whole where the two systems come together. 
+
+Light
+- name
+- location
+- on or off
+
+Thermostat
+- heat
+- cool
+
+House
+- time
+- temperature
+- lights
+
+```js
+var light = {
+  name: 'desk lamp',
+  location: 'office',
+  on: true
+};
+
+var thermostat = {
+  heat: false,
+  cool: true
+};
+
+var house = {
+  time: '1700',
+  temp: '70',
+  setOfLights: ['office', 'kitchen', 'bathroom', 'bedroom']
+};
+```
+
 
 ### 4. Sneaker Store
 
@@ -83,7 +192,47 @@ This app will allow customers to browse a list of products (sneakers, in this
 case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
-> Answer here
+
+> >
+Of course both the product and the order are mentioned in the description, so abstractions for both. The order item is essentially the cart from the app description just broken down a bit more to be manipulated into opbjects more readily.
+
+Product
+- name
+- color
+- size
+- price
+
+Order Item
+- product
+- quantity
+
+Order
+- set of order items
+- total quantity
+- order date
+- total price
+
+```js
+var product = {
+  name: 'Converse Classic Chuck Taylor High-top', 
+  color: 'red',
+  size: '9',
+  price: '$39.99'
+};
+
+var converseOrder = {
+  product: 'converse high-top',
+  quantity: 1
+};
+
+var order = {
+  setOfOrderItems: [converseOrder], 
+  quantity: 1,
+  date: '07/01/14',
+  price: '$39.99'
+};
+
+```
 
 ## Representing Abstractions in Code
 
@@ -139,7 +288,12 @@ var exampleLine = {
 
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
-> Answer here
+> >
+Advantage - Because the stations are contained in an object they can be accessed by name without needing to know their indices.
+
+Disadvantage - The app is supposed to show specific stops in specific orders but the stations information is stored in an unordered collection so their position is not guaranteed. 
+
+
 
 ### 6. Doctor Appointment App
 
@@ -242,7 +396,10 @@ Under what circumstances might one representation be a better choice than the
 other? Are there any circumstances in which the other representation might be
 the better choice?
 
-> Answer here
+> >
+Option 1, in which all the patients and appointments are inside a single doctor representation, would be the better option for doctor-scheduled appointments. Though if you tried to keep track of a single patient if would be a much more complicated task.
+
+Option 2, the appointment-based representation, would make it easier to find patients. I think you need more information about who in particular will be using this app before you can pick the most efficient pathway.
 
 ## Tying It Together
 
@@ -253,13 +410,58 @@ You've been tasked with building an in-browser tic-tac-toe game.
 a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
-  > Answer here
+> > 
+Game
+- player 1
+- player 2
+- turns
+
+Game-Play/ Turns
+- gamepiece x/o
+- placement
+
+Player
+- username
+- avatar
+ 
 
 b.  How might those entities be represented in JavaScript code?
 
-  > Answer here
+> >
+``` js
+var playerOne = {
+  username: 'Ben',
+  avatar: 'images/choc.jpg'
+};
+
+var moves = {
+  token: 'X',
+  placement: 1
+};
+
+var game = {
+  playerX: {
+    username: 'Ben',
+    avatar: 'images/choc.jpg'
+  },
+  playerO: {
+    username: 'Jerry',
+    avatar: 'images/van.jpg'
+  },
+  turns: {
+    gamePiece: 'X',
+    placement: 1
+  },
+   {
+    gamePiece: '0',
+    placement: 4
+  }
+};
+
+```
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
-  > Answer here
+> >
+To play a game, you need first a game itself, as well as players and the moves they make, and all of those entities have natural values for any game (players, usernames, gamepieces, etc.) I'm not really sure how to structure the game itself. Like not even a little bit. At all. 

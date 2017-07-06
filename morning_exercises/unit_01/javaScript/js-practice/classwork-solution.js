@@ -11,6 +11,7 @@
 // 1. true || false
 var resOne = true;
 
+
 // 2. null || ''
 var resTwo = false;
 
