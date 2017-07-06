@@ -1,21 +1,26 @@
 // Question 1
-function maxOfTwoNumbers() {
-
+function maxOfTwoNumbers(firstNum, secondNum) {
+   return Math.max(firstNum, secondNum);
 }
 
 // Question 2
-function maxOfThree() {
-
+function maxOfThree(firstNum, secondNum, thirdNum) {
+    return Math.max(firstNum, secondNum, thirdNum);
 }
 
 // Question 3
-function isCharacterAVowel() {
-
+function isCharacterAVowel(c) {
+    var vowels = ['a', 'e', 'i', 'o', 'u'];
+    if (vowels.indexOf(c) !== -1) {
+        return false;
+    }
+    return true;
 }
 
 // Question 4
+var newArray = [1, 3, 5, 7];
 function sumArray() {
- 
+    
 }
 
 
