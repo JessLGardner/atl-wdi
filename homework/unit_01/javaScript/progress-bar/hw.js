@@ -4,15 +4,39 @@
 
 var timerUI = {
   drawNumericDisplay: function(timerValue){
-    // Your Code Here
+    document.getElementById('numeric-display').textContent = timerValue;
   },
+
   drawProgressBars: function(timerValue){
-    // Your Code Here
+    var timePassed = 100 - timerValue;
+    document.getElementsByClassName('progress-bar')[0].style.width = timePassed + '%';
   },
+
+//get element
+//expand width to fit parent element
+//expansion based on timer countdown
+
   drawLitFuses: function(timerValue){
-    // Your Code Here
+    var timePassed = 98 - timerValue;
+    document.getElementsByClassName('burnt')[0].style.width = timePassed + '%'; 
+    document.getElementsByClassName('unburnt')[0].style.width = timePassed - '%'; 
   },
+   
+//get element
+//expand burnt width
+//decrease unburnt width
+//changes based on countdown
+// ????????
+
   drawCrawlers: function(timerValue){
-    // Your Code Here
+  
+    document.getElementsByClassName('crawler')[0]
+  
   }
 };
+
+//get element-crawler
+//move 10px right
+//move 10px updown same time
+//based on countdown
+//??????????
