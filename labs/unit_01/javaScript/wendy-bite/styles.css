@@ -1,1 +1,9 @@
-/* Add your CSS code here. */
+body {
+    background-color: grey;
+    color: white;
+    border-color: grey;
+}
+
+header {
+    text-align: center;
+}
