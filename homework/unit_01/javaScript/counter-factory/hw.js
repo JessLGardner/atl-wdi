@@ -52,10 +52,14 @@ const Presenter = {
     
     var counterUI = document.createElement('div');
     counterUI.className = 'counter';
-    counterUI.setAttribute = ('data-index', '2');
+    counterUI.dataset.index = '2';
     counterUI.innerHTML = "<h3>Count: <span>0</span></h3><button class='increment'> + 1 </button>";
-    // console.log(counterUI);
+    
+    document.getElementById('counter-list').appendChild(counterUI);
+  
+  // console.log(counterUI);
   },
+
 
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
@@ -72,10 +76,14 @@ const Presenter = {
 // Top-Level Application Control //
 const AppController = {
   onClickNewCounter: function(event){
-    // Your Code Here
+    var newCounter = document.getElementById('new-counter');
+    var event = newCounter.addEventListener('click', insertCounterComponent());
+   
   },
   onClickIncrement: function(event){
-    // Your Code Here
+    var newIncrement = document.getElementById('increment');
+    var event = newIncrement.addEventListener('click', ???????);
+   
   },
   onClickDelete: function(event){                           // REACH
     // Your Code Here
