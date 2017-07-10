@@ -67,6 +67,8 @@ const Presenter = {
 
 
   },
+
+  
   removeCounterComponent: function(countId){             // REACH
     console.log(`remove counter component #${countId}`);
     // Your Code Here
@@ -76,13 +78,27 @@ const Presenter = {
 // Top-Level Application Control //
 const AppController = {
   onClickNewCounter: function(event){
-    var newCounter = document.getElementById('new-counter');
-    var event = newCounter.addEventListener('click', insertCounterComponent());
-   
+    
+    CounterCollection.createCounter();
+    Presenter.insertCounterComponent(CounterCollection.lastCountId);
+
+    //console.log('click new counter ' + CounterCollection.lastCountId);
+
   },
   onClickIncrement: function(event){
-    var newIncrement = document.getElementById('increment');
-    var event = newIncrement.addEventListener('click', ???????);
+    var countId = Number(event.target.parentNode.dataset.index);
+
+
+    CounterCollection.incrementCounter(countId);
+    Presenter.refreshCounterComponent(countId);
+ 
+   
+   
+   
+   
+    //var newCounterNum = document.getElementById('counterNum');
+    //var newIncrement = document.getElementById('increment');
+    //var event = newIncrement.addEventListener('click', newCounterNum ++);
    
   },
   onClickDelete: function(event){                           // REACH
