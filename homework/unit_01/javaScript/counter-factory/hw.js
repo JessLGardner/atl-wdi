@@ -51,24 +51,25 @@ const Presenter = {
     console.log(`insert counter component #${newCountId}`);
     
     var counterUI = document.createElement('div');
-    counterUI.className = 'counter';
-    counterUI.dataset.index = '2';
+    counterUI.className += 'counter';
+    counterUI.dataset.countId = newCountId;
     counterUI.innerHTML = "<h3>Count: <span>0</span></h3><button class='increment'> + 1 </button>";
     
+    counterUI.getElementsByClassName('increment')[0].addEventListener('click', AppController.onClickIncrement);
+
     document.getElementById('counter-list').appendChild(counterUI);
-  
-  // console.log(counterUI);
   },
 
 
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
     
-
+    var currentCounterValue  = CounterCollection.getCounterValue(countId);
+    currentCounterValue = document.querySelector(`[data-count-id="${countId}"] span`).innerHTML;
 
   },
 
-  
+
   removeCounterComponent: function(countId){             // REACH
     console.log(`remove counter component #${countId}`);
     // Your Code Here
@@ -81,26 +82,18 @@ const AppController = {
     
     CounterCollection.createCounter();
     Presenter.insertCounterComponent(CounterCollection.lastCountId);
-
-    //console.log('click new counter ' + CounterCollection.lastCountId);
+     console.log(`click new counter (#${CounterCollection.lastCountId})`);
+ 
 
   },
-  onClickIncrement: function(event){
-    var countId = Number(event.target.parentNode.dataset.index);
 
+  onClickIncrement: function(event){
+    var countId = Number(event.target.parentNode.dataset.countId);
 
     CounterCollection.incrementCounter(countId);
     Presenter.refreshCounterComponent(countId);
- 
-   
-   
-   
-   
-    //var newCounterNum = document.getElementById('counterNum');
-    //var newIncrement = document.getElementById('increment');
-    //var event = newIncrement.addEventListener('click', newCounterNum ++);
-   
   },
+
   onClickDelete: function(event){                           // REACH
     // Your Code Here
   }
