@@ -56,12 +56,13 @@
   };
 
   /// User Interface ///
+
   const ViewEngine = {
     updateTimeDisplay: function(mins, secs, millisecs){
-      
-    $('#mins').html(mins);
-    $('#secs').html(secs);
-    $('#millisecs').html(millisecs);
+
+    $('#mins').html(ViewHelpers.zeroFill(mins, 2));
+    $('#secs').html(ViewHelpers.zeroFill(secs, 2));
+    $('#millisecs').html(ViewHelpers.zeroFill(millisecs/10, 2));
   },
   
     updateLapListDisplay: function(laps){
@@ -72,14 +73,13 @@
 
   const ViewHelpers = {
     zeroFill: function(number, length){
-      var stringFromNum = number.toString();
-      var numOfZeros = length - stringFromNum.length;
-    
-      if (numOfZeros === 1){
-        stringFromNum =  '0' + stringFromNum
-      } else if (numOfZeros === 2){
-        stringFromNum =  '00'
-      }
+
+    var str = number.toString();
+    let numZeroes = Math.max(length - str.length, 0);
+    for( var i = 0; i < (length - str.length); i++){
+      str = '0' + str;
+    }
+    return str;
     },
   };
 
