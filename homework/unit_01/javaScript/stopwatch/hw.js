@@ -39,19 +39,27 @@
     },
 
     start: function(){
-      if (this.isRunning === false) {
+      if (!this.isRunning) {
         this.isRunning = true;
+        this.tickClock();
       }
-      this.tickClock();
 
     },
     stop: function(){
       if (this.isRunning === true) {
-        this.isRunning = false;
+        (!this.isRunning);
       }
     },
     lap: function(){
-      // Your Code Here
+      
+      if (this.isRunning === true) {
+        this.laps.push({
+          mins: this.mins, 
+          secs: this.secs, 
+          millisecs: this.millisecs
+        });
+      } 
+
     }
   };
 
@@ -66,20 +74,29 @@
   },
   
     updateLapListDisplay: function(laps){
-      // Your Code Here
-
-    },
+    
+    var laps = Stopwatch.laps
+    var $lapList = $('#lap-list').html('');
+    for (var i=0; i <laps < lap.length; i++) {
+      append('<li>')ViewHelpers.zeroFill(laps[i].mins, 2) + ":" +
+      append('<li>')ViewHelpers.zeroFill(laps[i].secs, 2) + ":" +
+      append('<li>')ViewHelpers.zeroFill(laps[i].millisecs/10, 2)
+        
+    }
+    
+   ;
+    }, 
   };
 
   const ViewHelpers = {
     zeroFill: function(number, length){
 
-    var str = number.toString();
-    let numZeroes = Math.max(length - str.length, 0);
-    for( var i = 0; i < (length - str.length); i++){
-      str = '0' + str;
+    var stringFromNum = number.toString();
+    let numOfZeroes = Math.max(length - stringFromNum.length, 0);
+    for( var i = 0; i < (length - stringFromNum.length); i++){
+      stringFromNum = '0' + stringFromNum;
     }
-    return str;
+    return stringFromNum;
     },
   };
 
@@ -90,7 +107,7 @@
     },
 
     handleClickStart: function() {
-      if (Stopwatch.isRunning === false) {
+      if (!Stopwatch.isRunning) {
         Stopwatch.start();
       }
     },
@@ -98,19 +115,23 @@
     handleClickStopReset: function(){
       if (Stopwatch.isRunning === true) {
         Stopwatch.stop();
-      } else if (Stopwatch.isRunning === false) {
+      } else if (!Stopwatch.isRunning) {
         Stopwatch.reset();
       }
       ViewEngine.updateTimeDisplay(Stopwatch.mins, Stopwatch.secs, Stopwatch.millisecs);
     },
 
     handleClickLap: function(){
-      // Your Code Here
+
+      if (Stopwatch.isRunning === true) {
+        Stopwatch.lap();
+        ViewEngine.updateLapListDisplay(Stopwatch.laps);
+      }
     }
   };
 
   window.onload = function(){
-
+   // $('#lap').on('click', AppController.handleClickLap);
     $('#start').on('click', AppController.handleClickStart);
     $('#stop').on('click', AppController.handleClickStopReset);
   };
