@@ -15,7 +15,10 @@ app.use('/topping', toppingController);
 const orderController = require('./controllers/order_controller');
 app.use('/order', orderController);
 
-
+app.use('*', (req,res) => { 
+    res.send('404 Page Not Found')
+});
+               
 
 
 
