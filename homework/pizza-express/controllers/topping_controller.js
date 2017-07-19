@@ -4,7 +4,9 @@ const router = express.Router();
 
 
 router.get('/:type', (req, res) => {
-    res.send(`${req.params.type} pizza! Good choice.`);
+    res.render('topping', {
+        data: req.params.type
+    });
 });
 
 
