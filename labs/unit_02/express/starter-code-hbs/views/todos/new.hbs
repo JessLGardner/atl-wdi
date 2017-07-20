@@ -1,0 +1,16 @@
+<h2>Create a new Todo</h2>
+
+<form method="POST" action="/todos">
+<div>
+    <label for="description">Description:</label>
+    <input name="description">
+</div>
+<div>
+    <label for="urgent">Urgent:</label>
+    <span>Yes</span><input type="radio" name="urgent" value="true" checked>
+    <span>No</span><input type="radio" name="urgent" value="false">
+</div>
+    <button>SUBMIT</button>
+</form>
+
+<a href="/todos">GO BACK</a>
