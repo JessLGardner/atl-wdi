@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 
 
 //controllers for `/pirates` resource
-var pirateController = require('./controllers/pirates.js');
+const pirateController = require('./controllers/pirates.js');
 app.use('/pirates', pirateController);
 
 
