@@ -3,10 +3,13 @@
 // Barrels O' RUM
 
 var barrels = function(small, large, total){
+<<<<<<< HEAD
   var smallBarrelCost = 60;
   var largeBarrelCost = (total - (small * smallBarrelCost)) / large;
 
 return largeBarrelCost;
+=======
+>>>>>>> 1adf54b31b00325091a1e29b9748ceb6834df5ee
 };
 barrels(2, 5, 825);
 

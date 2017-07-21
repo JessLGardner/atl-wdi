@@ -37,20 +37,16 @@ router.get('/:id/edit', (req, res) =>{
 
 // UPDATE TODO
 router.put('/:id', (req, res) =>{
- // have id
-  const id = req.params.id;
- //use id to get index in array
-  const todo = data.seededTodos[id];
- //update values
-  todo.description = req.body.description;
-  todo.urgent = req.body.urgent;
- //redirect back to todo
-  res.method="GET";
+  const id = req.params.id;                 // have id
+  const todo = data.seededTodos[id];         //use id to get index in array
+    todo.description = req.body.description;   //update values
+    todo.urgent = req.body.urgent;
+  res.method="GET";                          //redirect back to todo
   res.redirect(`/todos/${id}`);
 });
 
 
-// SAVE TODO
+// create TODO
 router.post('/', (req, res) =>{
   console.log(req.body);
   const newTodo = {
