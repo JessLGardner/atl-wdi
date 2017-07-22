@@ -1,8 +1,13 @@
-<h1>The Flyest Pirates of Da 7 Cs</h1>
+<h1>The {{pirates.length}} Flyest Pirates</h1>
 
 <ul>
   {{#each pirates}}
     <li><a href="/pirates/{{@index}}"><h2>{{name}}</h2></a></li>
+    {{!-- </br> --}}
+    <form action="/pirates/{{@index}}?_method=DELETE" method="POST">
+      <input type="submit" value="Delete this Pirate" />
+    </form>
+    </br>
   {{/each}}
 </ul>
 
