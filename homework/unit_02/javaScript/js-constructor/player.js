@@ -1,5 +1,29 @@
 console.log('player file is loaded');
 
+class Tamagotchi {
+  constructor() {
+    this.foodInTummy = 10;
+    this.restedness = 10;
+    this.health = 10;
+  }
+  cry(){
+    this.foodInTummy -= 1;
+    console.log('Current food in tummy: ' + this.foodInTummy);
+    console.log('WAHH!!');
+  }
+}
+
+let tim = new Tamagotchi();
+let tam = new Tamagotchi();
+
+console.log(tim);
+tim.cry();
+
+console.log(tam);
+tam.cry();
+
+
+
 var player = {
   name: "Neo",
   feedTamagotchi: function(tamagotchi) {
