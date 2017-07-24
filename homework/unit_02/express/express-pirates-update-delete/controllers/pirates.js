@@ -22,6 +22,7 @@ router.get('/new', function(req, res){
 });
 
 
+
 //this is for each pirate page   // SHOW
 router.get('/:id', function(req, res){
 
