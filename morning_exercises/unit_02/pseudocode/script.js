@@ -54,26 +54,31 @@ var calcFruitJuice = function(galCCJuice, perFruitCC, galKLJuice, perFruitKL){
 
 
 // - Find the total amount of pure fruit juice (gal)
+
 //   - Total of Costco pure fruit juice:
 //     - percentage pure fruit juice * number of gallons
+    var totalCostco = perFruitCC * galCCJuice;
 //   - Total of Kirkland pure fruit juice:
 //     - percentage pure fruit juice * number of gallons
+    var totalKirk = perFruitKL * galKLJuice;
 //   - Add Costco pure fruit juice total + Kirkland pure fruit juice total
-
+  var perFruitTotal = totalCostco + totalKirk;
 
 // - Find the total amount of juice (gal):
 //   - Total of Costco juice + Total of Kirkland Juice
-
+  var galTotal = galCCJuice + galKLJuice;
 
 // - Calculate (total pure fruit juice) / (total juice)
+  var total = perFruitTotal / galTotal;
 
+  return total;
 
 
 
 };
 
 
-calcFruitJuice(3, 20, 2, 55);
+calcFruitJuice(3, .20, 2, .55);
 
 
 

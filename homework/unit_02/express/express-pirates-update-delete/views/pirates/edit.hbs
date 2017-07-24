@@ -1,22 +1,22 @@
-<h1>Update Your Pirate</h1>
+<h2>Update This Pirate</h2>
 
 <form action='/pirates/{{id}}?_method=PUT' method="POST">
-  <label for="name">Name:</label>
-  <input name="name" placeholder="{{pirates.name}}"><br>
+  <label for="name">Name:</label> 
+  <input type="text" name="name" placeholder="{{pirates.name}}"><br>
 
-  <label for="birthplace">Birthplace:</label>
-  <input name="birthplace" placeholder="{{pirates.birthplace}}"><br>
+  <label for="birthplace">Birthplace:</label> 
+  <input type="text" name="birthplace" placeholder="{{pirates.birthplace}}"><br>
   
   <label for="death_year">Year of Death:</label>
   <input type="number" name="death_year" placeholder="{{pirates.death_year}}"><br>
   
   <label for="base">Base:</label>
-  <input name="base" placeholder="{{pirates.base}}"><br>
+  <input type="text" name="base" placeholder="{{pirates.base}}"><br>
   
   <label for="nickname">Nickname:</label>
-  <input name="nickname" placeholder="{{pirates.nickname}}"><br>
+  <input type="text" name="nickname" placeholder="{{pirates.nickname}}"><br>
     </br>
-  <input type="submit" value="Update Your Pirate">
+  <input type="submit" value="Update This Pirate">
 </form>
 
 

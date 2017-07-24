@@ -29,7 +29,7 @@ router.get('/:id', function(req, res){
 	var showPirate = pirates[req.params.id];
 
 	res.render("pirates/show.hbs", {
-		pirate: showPirate
+		pirates: showPirate
 	});
 });
 
@@ -38,7 +38,7 @@ router.get('/:id/edit', (req, res) =>{
 	const id = req.params.id;
 	const pirate = pirates[id];
 	
-	res.render('pirates/edit.hbs', {
+	res.render('pirates/edit', {
 		pirates: pirate,
 		id: id
 	})
