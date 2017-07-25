@@ -45,7 +45,7 @@ var promise = new Promise(function (fulfill, reject) {
             fulfill()
         }, 300);
 
-    setTimeout(function() {
+    (function() {
             reject(new Error('REJECTED!'));
         }, 300);
 });
