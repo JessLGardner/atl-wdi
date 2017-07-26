@@ -30,36 +30,346 @@ entities/abstractions (e.g. Senior Paws app, above) that the app might use, and 
 This app provides easy access to all your e-mail service providers in one app. The app will let you select one of your email addresses and view your e-mails for that address.
 
 ```
-Write your answer here or in a separate js file.
-```
+1. model
 
+user has:
+-id
+-username
+-password
+-email addresses
+
+address has:
+-id
+-name
+-address
+-password
+-emails
+```
+```js
+2. object
+
+var user = {
+  id: number,
+  username: 'string',
+  password: 'string',
+  emailAddresses: [array]
+}
+
+var address = {
+  id: number,
+  name: 'string',
+  address: 'string',
+  password: 'string',
+  emails: [array]
+}
+```
+```js
+3. relationship
+
+var userOne = {
+  id: 238023,
+  username: 'kelly77',
+  password: 'gurrrrl8',
+  emailAddresses: [
+    {
+      id: 34234,
+      name: 'gmail',
+      address: 'kellyyyyy@gmail.com',
+      password: 'pass23_01',
+      emails: [
+        id: 2039482034,
+        id: 80808082,
+        id: 088082131
+      ]
+    },
+    {
+      id: 346768,
+      name: 'yahoo',
+      address: 'kellyyyyy@yahoo.com',
+      password: 'pass24_01',
+      emails: [
+        id: 20392034,
+        id: 808082,
+        id: 088031
+      ]
+    }
+  ]
+}
+```
 ### 2. Radio on the Internet app
 
 This app hosts a ton of radio stations, each featuring their own playlists of songs. The radio stations can be listed by genre or popularity.
 
 
 ```
-Write your answer here or in a separate js file.
+1. model
+
+user has:
+-id
+-name
+-password
+-email
+-favorite genre
+-favorite stations
+-favorite playlists
+
+radio station has:
+-name
+-id
+-ratings/popularity
+-reviews
+-genre
+-playlists
+
+playlist has
+-id
+-name
+-station
+-genre
+-ratings
 ```
 
+```javascript
+2. object
+
+var user = {
+  id: number,
+  username: 'string',
+  password: 'string',
+  email: 'string',
+  favGenres: [array],
+  favStations: [array],
+  favPlaylists: [array]
+}
+
+var station = {
+  id: number,
+  name: 'string',
+  ratings: [array],
+  reviews: [array],
+  genre: 'string',
+  playlists: [array]
+}
+var playlist: {
+    id: number,
+    name:'string'
+    station: 'string',
+    genre: 'string',
+    ratings: []
+}
+```
+```js
+3. relationship
+
+var userOne = {
+  id: 345890837923,
+  username: 'user22boi',
+  password: 'kewl_1780',
+  email: 'user@email.com',
+  favGenres: ['terrible', 'scream', 'dumb'],
+  favStations: [{
+    id: 98.7,
+    name: 'WKRP',
+    ratings: [],
+    reviews: [],
+    genre: 'terrible',
+    playlists: []
+    }],
+  favPlaylists: [{
+    id: 023983,
+    name:'listOne'
+    station: 'KROQ',
+    genre: 'dumb',
+    ratings: []
+    }]
+}
+```
 ### 3. Rock Concert App
 
 This app will be a tool for managing all of your favorite bands' concerts; it will keep track of their tour dates, ticket purchasing, and next recommended show.
 
 ```
-Write your answer here or in a separate js file.
+1. model
+
+band has:
+-name
+-tour date
+-reccomends
+
+tour date has:
+-location
+-ticket price
+```
+``` js
+2. objects
+
+var band = {
+  name: 'string',
+  tourDate: [array],
+  recs: [array]
+}
+var tourDate = {
+  location: [],
+  ticketPrice: [
+    low: '$',
+    high: '$$',
+    stupidHigh: '$$$'
+  ] 
+}
+```
+``` js
+3. relationship
+
+var band One= {
+  name: 'Band',
+  tourDate: {
+    location: [],
+    ticketPrice: [
+      low: '$',
+      high: '$$',
+      stupidHigh: '$$$'
+    ]
+  },
+  recs: []
+}
 ```
 
 ### 4. Coffee To-Go App
 
 This app will allow customers to browse a list of coffeeshops nearby, order drinks off of their menu, add those drinks to a shopping cart, and save that cart as a past order once the purchase is complete.
 
+```
+1. model
+
+user has:
+-id
+-username
+-password
+-email
+-fav shops
+
+shop has:
+-id
+-name
+-location
+-menu
+-fav order
+
+
+```
+``` js
+2. objects
+
+var user = {
+  id: number,
+  username: 'string',
+  password: 'string',
+  email: 'string',
+  favShops: [],
+}
+var shop = {
+  id: number,
+  name: 'string',
+  location: 'string',
+  menu: [array],
+  favOrder: [array]
+}
+```
+``` js
+3. relationship
+
+var user = {
+  id: 345234,
+  username: 'dUde2',
+  password: 'same5thing',
+  email: 'duuuude@gmail.com',
+  favShops: [
+    {
+      id: 0980,
+      name: 'Starbucks',
+      location: 'address',
+      menu: [
+        {
+          hotDrinks: []
+        },
+          coldDrinks: []
+      ],
+      favOrder: [
+        thing: 'drink1',
+        thing2: 'muffin'
+      ]
+    }
+  ]
+}
+```
+
 ### 5. Team Tracker App
 
 This app shows you all the latest stats from your favorite sports teams. You can view individual player stats and full team stats.
 
 ```
-Write your answer here or in a separate js file.
+1. model
+
+team has:
+-name
+-players
+-stats
+
+player has:
+-name
+-currentTeam
+-stats
+-pastTeams
+```
+```js
+2. objects
+
+var team = {
+  name: 'string',
+  players: [array],
+  teamStats: [array]
+}
+var player = {
+  name: 'string',
+  currentTeam: 'string',
+  stats: [array],
+  pastTeams: [array]
+}
+```
+```js
+3. relationship
+
+var team = {
+  name: 'Falcons',
+  players: [
+    {
+      name: 'Guy Dude',
+      currentTeam: 'Falcons',
+      stats: [
+        thing: 'thing',
+        thing2: 'thing'
+      ],
+      pastTeams: [
+        team: 'Team',
+        team2: 'Team'
+      ]
+    }
+  ],
+  teamStats: [
+    {
+      currentSeason: [
+        thing: 'thing',
+        thing2: 'thing'
+      ]
+    },
+    {
+      pastSeasons: [
+        thing: 'thing',
+        thing2: 'thing'
+      ]
+    }
+  ]
+}
 ```
 
 
@@ -68,7 +378,8 @@ Write your answer here or in a separate js file.
 Q. When you were creating relationships between the models, what were some thoughts or questions you had to help guide a connection between them?
 
 ```
-Write your answer here or in a separate js file.
+What would I want to be able to do as a user?
+What information does the app need to find things, even if the user never sees it (id)
 ```
 
 ### Reading and Videos for Tomorrow
