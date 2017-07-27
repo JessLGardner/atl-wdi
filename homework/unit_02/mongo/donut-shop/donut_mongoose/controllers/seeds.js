@@ -5,6 +5,7 @@
 var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
+mongoose.connect('mongodb://localhost/donut_store');
 var Donut = require("../models/donuts.js");
 
 
