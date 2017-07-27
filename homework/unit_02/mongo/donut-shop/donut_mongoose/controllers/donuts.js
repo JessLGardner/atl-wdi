@@ -2,6 +2,8 @@
 // REQUIREMENTS
 //======================
 // require express, router, mongoose, Donut schema
+var express = require("express");
+var router = express.Router();
 
 
 //======================
@@ -62,3 +64,4 @@
 // EXPORTS
 //======================
 // export router with module.exports
+module.exports = router;
