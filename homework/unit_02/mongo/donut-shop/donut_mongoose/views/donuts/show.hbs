@@ -2,7 +2,8 @@
 
 	<h2>You are viewing:
 
-		<<<< DONUT NAME HERE >>>>
+		{{this.name}}
+		{{!-- <<<< DONUT NAME HERE >>>> --}}
 
 	</h2>
 
@@ -11,27 +12,32 @@
 	<div class="donut-container-show">
 		<h2 id="donut-name">
 
-				<<<< DONUT NAME HERE >>>>
+				{{this.name}}
+				{{!-- <<<< DONUT NAME HERE >>>> --}}
 
 		</h2>
 
-				<<<< DONUT IMAGE HERE >>>>
+				<img src="{{this.img}}"/>"
+				{{!-- <<<< DONUT IMAGE HERE >>>> --}}
 
 		<br>
 		<h3>Description:</h3>
 			<p>
 
-				<<<< DONUT DESCRIPTION HERE >>>>
+				{{this.description}}
+				{{!-- <<<< DONUT DESCRIPTION HERE >>>> --}}
 
 			</p><br>
 		<h3>Price:</h3>
 			<p id="cost">$
 
-				<<<< DONUT PRICE HERE >>>> each</p><br>
+				{{this.price}} each</p><br>
+				{{!-- <<<< DONUT PRICE HERE >>>> each</p><br> --}}
 
 			<h3 id="quantity">
 
-	 				<<<< DONUT QUANTITY >>>> remaining
+					{{this.qty}} remaining
+	 				{{!-- <<<< DONUT QUANTITY >>>> remaining --}}
 
 			</h3>
 

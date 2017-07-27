@@ -16,13 +16,7 @@ router.get('/', (req, res)=>{
             console.log('calling index page');
             // res.send(donut);
             res.render('donuts/index', 
-                {
-                donut,
-                // donutd: donut._id,
-                // donutImg: donut.img,
-                // donutName: donut.name,
-                // donutPrice: donut.price
-                }
+                { donut }
             )
         })
         .catch((err)=>{
@@ -37,17 +31,31 @@ router.get('/', (req, res)=>{
 //======================
 // Create a GET new route "/new" that renders the new.hbs form
 
+router.get('/new', (req, res)=>{
+    res.render('donuts/new');
+});
 
 
 //======================
 // SHOW
 //======================
 // Create a GET show route "/:id" that renders the donut's show page
-// router.get('/:id', (req, res)=>{
+router.get('/:id', (req, res)=>{
+    const donutIdSearchFor = req.params.id;
+    console.log('Where are you???');
 
-// })
-
-
+    DonutModel.findById(donutIdSearchFor)
+        .then((donut)=>{
+            console.log('calling show page');
+            res.render('donuts/show', 
+                { donut }
+            )
+        })
+        .catch((err)=>{
+            console.log('Error finding your donut!');
+            console.log(err);
+        })
+})
 
 //======================
 // CREATE
@@ -55,7 +63,21 @@ router.get('/', (req, res)=>{
 // Create a POST index route "/" that creates a new donut
 // and upon success redirects back to the index page "/"
 
+router.post('/', (req, res)=>{
+    const newDonutInfo = req.body;
 
+    DonutModel.create(newDonutInfo)
+        .then((donut)=>{
+            res.redirect(
+                'donuts/show',
+                    {donut}
+            )
+        })
+        .catch((err)=>{
+            console.log('Error posting your new donut!');
+            console.log(err);
+        })
+});
 
 //======================
 // EDIT
@@ -63,7 +85,9 @@ router.get('/', (req, res)=>{
 // Create a GET edit route "/:id/edit" that renders the edit.hbs page and
 // sends that donut's data to it
 
+// router.get('/:id/edit', (req, res)=>{
 
+// });
 
 //======================
 // UPDATE
@@ -71,6 +95,9 @@ router.get('/', (req, res)=>{
 // Create a PUT update route "/:id" that updates the donut and
 // redirects back to the SHOW PAGE (not index)
 
+// router.put('/:id', (req, res)=>{
+
+// });
 
 
 //======================
@@ -79,7 +106,9 @@ router.get('/', (req, res)=>{
 // Create a DELETE delete route "/:id" that deletes the donut and
 // redirects back to index page "/"
 
+// router.delete('/:id', (req, res)=>{
 
+// });
 
 //======================
 // EXPORTS
@@ -90,8 +119,6 @@ module.exports = router;
 
 
 
-// Set up your requirements. DON'T FORGET to module.exports the router at the bottom.
-// Create a GET index route "/" that sends all donuts to index.hbs
 // Create a GET show route "/:id" that renders the donut's show page
 // Create a GET new route "/new" that renders the new.hbs form
 // Create a POST index route "/" that creates a new donut and upon success redirects back to the index page

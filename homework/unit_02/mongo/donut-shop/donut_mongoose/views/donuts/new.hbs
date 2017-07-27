@@ -6,7 +6,15 @@
 
 	<div id="edit-form" class="donut-container-show">
 
-		<<<< YOUR WHOLE FORM GOES HERE >>>>
+		{{!-- <<<< YOUR WHOLE FORM GOES HERE >>>> --}}
+		<form action="/{{this.id}}" method="POST">
+			<input type="text" name="name" placeholder="name">	
+			<input type="text" name="description" placeholder="description">
+			<input type="text" name="img" placeholder="image url">
+			<input type="number" name="price" placeholder="price">
+			<input type="number" name="qty" placeholder="quantity">
+			<input type="submit" value="Create New Donut">
+		</form>
 
 	</div>
 </main>
