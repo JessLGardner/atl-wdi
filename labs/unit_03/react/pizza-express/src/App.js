@@ -4,6 +4,7 @@ import SplashImage from './Components/SplashImage';
 import Description from './Components/Description';
 import MenuList from './Components/MenuList';
 import LocationList from './Components/LocationList';
+import Contact from './Components/Contact';
 
 
 class App extends Component {
@@ -15,12 +16,7 @@ class App extends Component {
         <Description/>
         <MenuList/>
         <LocationList/>
-
-
-
-
-
-
+        <Contact/>
       </div>
     );
   }
