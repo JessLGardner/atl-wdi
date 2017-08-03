@@ -3,23 +3,19 @@ import Navbar from './Components/Navbar';
 import SplashImage from './Components/SplashImage';
 import Description from './Components/Description';
 import MenuList from './Components/MenuList';
+import LocationList from './Components/LocationList';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div> 
-          <Navbar/>
-        </div>
-        <div> 
-          <SplashImage/>
-        </div>
-        <div>
-          <Description/>
-        </div>
-        <div>
-          <MenuList/>
-        </div>
+        <Navbar/> 
+        <SplashImage/>
+        <Description/>
+        <MenuList/>
+        <LocationList/>
+
 
 
 
