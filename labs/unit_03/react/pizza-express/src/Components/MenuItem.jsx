@@ -3,11 +3,13 @@ import React, {Component} from 'react';
 class MenuItem extends Component{
     render(){
         return(
-            <div>
-                <h3>{this.props.pizza.name}</h3>
-                <h3>{this.props.pizza.price}</h3>
-                <h3>{this.props.pizza.description}</h3>
+            <div className="menu-item">
                 <img src={this.props.pizza.image} alt=""/>
+                <div className="menu-description">
+                    <p className="menu-item-name">{this.props.pizza.name}</p>
+                    <p>{this.props.pizza.price}</p>
+                    <p>{this.props.pizza.description}</p>
+               </div>
             </div>
         );
     }

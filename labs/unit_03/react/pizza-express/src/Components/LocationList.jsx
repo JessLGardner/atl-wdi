@@ -5,10 +5,13 @@ import Location from './Location';
 class LocationList extends Component{
     render(){
         return(
-            <div>
-                {locationData.map((loc, i)=>{
-                    return <Location key={i} location={loc}/>
-                })};
+            <div id="locations">
+                <h1 >LOCATIONS:</h1>
+                    <div className="locations">
+                    {locationData.map((loc, i)=>{
+                        return <Location key={i} location={loc}/>
+                    })}
+                    </div>
             </div>
         );
     }
