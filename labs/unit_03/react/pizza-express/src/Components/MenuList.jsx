@@ -5,7 +5,7 @@ import pizzaData from '../pizzaData.js';
 class MenuList extends Component{
     render(){
         return(
-            <div className="menu">
+            <div className="menu"><a name="menu"/>
                 <h1>MENU:</h1>
                  <div className="menu-container">
                     {pizzaData.map((za, i)=>{

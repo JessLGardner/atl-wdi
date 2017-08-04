@@ -5,7 +5,7 @@ import Location from './Location';
 class LocationList extends Component{
     render(){
         return(
-            <div id="locations">
+            <div id="locations"><a name="location"/>
                 <h1 >LOCATIONS:</h1>
                     <div className="locations">
                     {locationData.map((loc, i)=>{
