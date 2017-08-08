@@ -7,19 +7,19 @@ const Search = () => {
       <strong>Search by:</strong> Title <em>or</em> ID
 
       <div className="search">
-        <form id="title-search-form" method="get">
+        <form onSubmit={props.searchByTitle} id="title-search-form" method="get">
           <input type="text" name="title" placeholder="Enter movie title" />
           <input type="submit" value="Search for this title" />
         </form>
       </div>
 
-      <div className="search">
+       <div className="search">
         <form id="id-search-form" method="get">
           <input type="text" name="id" placeholder="Enter omdb movie ID" />
           <input type="submit" value="Search by ID" />
         </form>
       </div>
-
+ 
     </section>
   );
 };
