@@ -19,7 +19,7 @@ class App extends Component {
 
   //Update these methods to make axios calls to OMDB and update this.state.movie with the response from the server
   _searchByTitle = () => {
-    axios.get('http://omdbapi.com/?t=&apikey=d31f1a94')
+    axios.get('http://omdbapi.com/?t&apikey=d31f1a94')
       .then((res)=>{
         console.log("Search by Title");
         this.setState({
