@@ -1,20 +1,29 @@
 -- BASIC QUERIES
 -- Unless otherwise stated, all queries should return all columns
 
+
 -- Get all information about all authors
   SELECT * FROM authors;
 
 -- Get just the name and birth year of all authors
   SELECT name, birth_year From authors;
 
+<<<<<<< HEAD
 -- Get all authors born in the 20th centruy or later
   SELECT * From authors WHERE birth_year >= 1900;
+=======
+-- Get all authors born in the 20th century or later
+>>>>>>> f6a9420fe749572f73141822de567a889b5d6e37
 
 -- Get all authors born in the USA
   SELECT * FROM authors WHERE nationality = 'United States of America';
 
+<<<<<<< HEAD
 -- Get all books published on 1985
   SELECT * FROM books WHERE publication_date = 1985;
+=======
+-- Get all books published in 1985
+>>>>>>> f6a9420fe749572f73141822de567a889b5d6e37
 
 -- Get all books published before 1989
   SELECT * FROM books WHERE publication_date < 1989;
@@ -23,8 +32,11 @@
   SELECT title FROM books;
 
 -- Get just the year that 'A Dance with Dragons' was published
+<<<<<<< HEAD
   -- Cry when you realize how long it's been
   SELECT publication_date FROM books WHERE UPPER(title) = UPPER('A Dance with Dragons');
+=======
+>>>>>>> f6a9420fe749572f73141822de567a889b5d6e37
 
 -- Get all books which have `the` somewhere in their title (hint, look up LIKE/ILIKE)
   SELECT * FROM books WHERE title ILIKE '%the %' OR title ILIKE '% the %';
