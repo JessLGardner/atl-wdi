@@ -35,5 +35,5 @@ CREATE TABLE storefronts (
     kitchen BOOLEAN,
     sq_ft NUMERIC,
     owner VARCHAR(255),
-    outdoor_seat1.5 BOOLEAN DEFAULT FALSE
+    outdoor_seat BOOLEAN DEFAULT FALSE
 );
