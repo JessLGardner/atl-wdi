@@ -48,6 +48,19 @@ like = gets.chomp
 puts "#{name} likes to #{like}."
 
 
+#6.
+my_first_array = []
+my_first_array = ["alpha", "bravo", "charlie", "delta", "echo", 1, 2, 3, 4]
+
+puts my_first_array.last
+puts my_first_array.first
+puts my_first_array[1] = "Joe"
+puts my_first_array[2] = 3
+puts my_first_array.push(true)
+puts my_first_array[3].class
+
+#check
+puts my_first_array.to_s
 
 
 
