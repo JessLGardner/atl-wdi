@@ -36,6 +36,18 @@ puts g + gToNumber.to_s
 puts g.to_i + gToNumber
 
 
+# 5.
+puts "What is your favorite number?"
+number = gets.chomp.to_i
+puts "Your fav times 2 = #{number * 2}"
+
+puts "What's your name?"
+name = gets.chomp
+puts "Hi #{name}! What do you like to do?"
+like = gets.chomp
+puts "#{name} likes to #{like}."
+
+
 
 
 
