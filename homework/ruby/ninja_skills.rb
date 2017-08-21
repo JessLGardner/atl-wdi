@@ -63,6 +63,22 @@ puts my_first_array[3].class
 puts my_first_array.to_s
 
 
+# 7.
+my_favorite_animals = {
+    Emma: 'Cat',
+    Pascoe: 'Dog',
+    Edgar: 'Donkey',
+    Orion: 'Fish',
+    Simba: 'Lion'
+}
+puts my_favorite_animals
+my_favorite_animals[:Edgar] = 'Bear'
+puts my_favorite_animals
+
+my_favorite_movie = {}
+my_favorite_movie[:scifi] = 'Star Wars'
+puts my_favorite_movie
+
 
 
 
