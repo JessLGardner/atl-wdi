@@ -23,53 +23,60 @@ Answer should be no more than a couple of sentences. Refer to the reading.
 1. According to Metz, what is Object-oriented design about?
 
 ```
-Your Answer Here
+    Objects, that have behavior and contain data, and the messages that pass between objects to invoke one another's behaviors.
 ```
 
 2. What does SOLID stand for?
 
 ```
-Your Answer Here
+    Single Responsibility, Open-Closed, Liskov Substition, Interface Segregation, and Dependency Inversion
 ```
 
 3. Ruby is a class-based object-oriented language. What does that mean?
 
 ```
-Your Answer Here
+    everything is an object, and every object has a class
 ```
 
 4. Where are methods defined in Ruby?
 
 ```
-Your Answer Here
+    in classes
 ```
 
 5. Why does single Responsibility matter?
 
 ```
-Your Answer Here
+    When you have Single Responsiblity class, you have behavior that lives in only one place. This allows change without consequence and reuse without duplication.
 ```
 
 6. What does `attr_reader` do?
 
 ```
-Your Answer Here
+    It's a wrapper method, but I don't really understand what that is.
 ```
 
 7. What are 4 benefits Metz outlines for methods that have a single responsibility?
 
 ```
-Your Answer Here
+    1. Expose previously hidden qualities.
+    2. Avoid the need for comments.
+    3. Encourage reuse.
+    4. Are easy to move to another class.
 ```
 
 8. What are 4 things an object knows when it has a dependency?
 
 ```
-Your Answer Here
+    1. The name of another class.
+    2. THe name of a message that it intends to send to someone other than self.
+    3. The arguments that a message requires.
+    4. The order of those arguments.
 ```
 
 9. Dependency management is core to creating future-proof applications. What does injecting dependencies and isolating dependencies do? What are their benefits?
 
 ```
-Your Answer Here
+    Injecting minimizes the class's dependecies on other classes, so if something changes everything won't be broken.
+    Isolating dependencies minimizes them as much as possible so they are easier to spot and remove.
 ```
