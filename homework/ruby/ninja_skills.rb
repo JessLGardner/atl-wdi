@@ -80,6 +80,46 @@ my_favorite_movie[:scifi] = 'Star Wars'
 puts my_favorite_movie
 
 
+# 8.
+first_range = (1..10)
+print first_range.to_a
+
+second_range = (1...1000)
+print second_range.to_a
+
+for number in first_range do
+    print number.to_s
+end
+
+x = 0
+while x < 50 do
+    print "#{second_range}"
+    x += 1
+end
+# I know this one's not right. I can't figure it out.
+
+new_array =[]
+first_range.each do |number|
+    number2 = number * 2
+    new_array << number2
+end
+print new_array
+
+new_range = first_range.map do |num|
+    if num % 2 == 0
+        num.to_s
+    else num % 2 != 0
+        num
+    end
+end
+print new_range
+
+
+
+
+
+
+
 
 
 
